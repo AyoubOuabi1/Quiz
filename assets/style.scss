@@ -3,7 +3,7 @@ $primary-color: #004c6d;
 $textColor: #fff;
 $answerBackColor:#7aa6c2;
 $qeustionBackColor:#069;
-$layout-breakpoint-small: 560px;
+$layout-breakpoint-small: 960px;
 
 @mixin bodyy($pdng: 10px) {
   box-sizing: border-box;
@@ -11,6 +11,20 @@ $layout-breakpoint-small: 560px;
   font: 100% $font-stack;
   background-color: $primary-color;
 }
+@mixin answerDesign($backgrnd: $answerBackColor) {
+  font-size: large;
+  font-family: cursive;
+  background-color: $backgrnd;
+  color: $textColor;
+  border : 2px solid $answerBackColor;
+  border-radius: 5px;
+  padding: 15px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   @include bodyy($pdng: 10px);
 }
@@ -59,18 +73,15 @@ body {
   margin-top: 30px;
 }
 
-.answer{
-  font-size: large;
-  font-family: cursive;
-  background-color: $answerBackColor;
-  color: $textColor;
-  border : 2px solid $answerBackColor;
-  border-radius: 5px;
-  padding: 15px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.answerBefor{
+  @include answerDesign();
+}
+.answerCorrect{
+  @include answerDesign($backgrnd: #52ea09);
+}
+
+.answerNotCorrect{
+  @include answerDesign($backgrnd:  #d70000);
 }
 
 @media (min-width: $layout-breakpoint-small) {
