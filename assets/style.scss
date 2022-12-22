@@ -1,16 +1,42 @@
 $font-stack: Helvetica, sans-serif;
-$primary-color: rgb(202, 202, 202);
+$primary-color: #004c6d;
+$textColor: #fff;
+$answerBackColor:#7aa6c2;
+$qeustionBackColor:#069;
+$layout-breakpoint-small: 560px;
 
-body {
-  padding: 100px;
+@mixin bodyy($pdng: 10px) {
+  box-sizing: border-box;
+  padding: $pdng;
   font: 100% $font-stack;
   background-color: $primary-color;
-  
-
-
 }
-.answerContainer{
+body {
+  @include bodyy($pdng: 10px);
+}
 
+.progress-bar {
+  width: 100%;
+  height: 3em;
+  background-color: $qeustionBackColor;
+  border-radius: 10px;
+  color: $textColor;
+}
+
+.progress-done{
+  text-align: center;
+  display: flex;
+  margin-left: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color:$answerBackColor;
+  transition: 1s ease 0.3s;
+  height:100%;
+  width:0%;
+  border-radius: 10px;
+}
+
+.answerContainer{
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -21,10 +47,34 @@ body {
   margin-top: 100px;
   text-align: center;
    
-
+  color: $textColor;
 }
+.question{
+  color: $textColor;
+  border: 2px solid $qeustionBackColor;
+  border-radius: 10px;
+  padding: 50px;
+  background-color: $qeustionBackColor;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
 .answer{
-  border : 2px solid #000000;
+  font-size: large;
+  font-family: cursive;
+  background-color: $answerBackColor;
+  color: $textColor;
+  border : 2px solid $answerBackColor;
   border-radius: 5px;
   padding: 15px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: $layout-breakpoint-small) {
+  body{
+    @include bodyy($pdng: 100px)
+  }
 }
