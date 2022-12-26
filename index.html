@@ -9,20 +9,27 @@
 </head>
 <body>
     <div class="container">
-        <h1>Choose the correct answer</h1>
-        <div class="progress-bar">
-            <div class="progress-done">
+        <div id="answerPar">
+            <h1>Choose the correct answer</h1>
+            <div class="progress-bar">
+                <div class="progress-done">
 
+                </div>
+            </div>
+            <div class="question">
+                <h2 id="questionTitle">test question please choose</h2>
+            </div>
+            <div class="answerContainer">
+                <button type="button" id="1"  class="answerBefor">test answer 1</button>
+                <button type="button" id="2"  class="answerBefor">test answer 2</button>
+                <button type="button" id="3"  class="answerBefor">test answer 3</button>
+                <button type="button" id="4"  class="answerBefor">test answer 4</button>
             </div>
         </div>
-        <div class="question">
-            <h2 id="questionTitle">test question please choose</h2>
-        </div>
-        <div class="answerContainer">
-            <button type="button" id="1"  class="answerBefor">test answer 1</button>
-            <button type="button" id="2"  class="answerBefor">test answer 2</button>
-            <button type="button" id="3"  class="answerBefor">test answer 3</button>
-            <button type="button" id="4"  class="answerBefor">test answer 4</button>
+
+
+        <div class="scrour" id="scrPar">
+            <p>total of the correct answers is <span id="scr">12</span></p>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

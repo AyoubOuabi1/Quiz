@@ -11,7 +11,7 @@ $layout-breakpoint-small: 960px;
   font: 100% $font-stack;
   background-color: $primary-color;
 }
-@mixin answerDesign($backgrnd: $answerBackColor) {
+@mixin answerDesign ($backgrnd: $answerBackColor) {
   font-size: large;
   font-family: cursive;
   background-color: $backgrnd;
@@ -24,7 +24,15 @@ $layout-breakpoint-small: 960px;
   align-items: center;
   justify-content: center;
 }
-
+%paraDesign{
+  color: $textColor;
+  border: 2px solid $qeustionBackColor;
+  border-radius: 10px;
+  padding: 50px;
+  background-color: $qeustionBackColor;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 body {
   @include bodyy($pdng: 10px);
 }
@@ -63,16 +71,13 @@ body {
    
   color: $textColor;
 }
-.question{
-  color: $textColor;
-  border: 2px solid $qeustionBackColor;
-  border-radius: 10px;
-  padding: 50px;
-  background-color: $qeustionBackColor;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
 
+.question{
+  @extend %paraDesign;
+}
+.scrour{
+  @extend %paraDesign;
+}
 .answerBefor{
   @include answerDesign();
 }
