@@ -19,7 +19,7 @@ $layout-breakpoint-small: 960px;
   border : 2px solid $answerBackColor;
   border-radius: 5px;
   padding: 15px;
-  height: 200px;
+   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,6 +57,9 @@ body {
   width:0%;
   border-radius: 10px;
 }
+.hiden{
+  display: none;
+}
 
 .answerContainer{
   display: grid;
@@ -77,6 +80,17 @@ body {
 }
 .scrour{
   @extend %paraDesign;
+}
+.rules{
+  @extend %paraDesign;
+  text-align: start;
+ }
+.startQuiz{
+  background-color: $answerBackColor;
+  width: 120px;
+  height: 40px;
+  border: 0 solid transparent;
+  border-radius: 10px;
 }
 .answerBefor{
   @include answerDesign();

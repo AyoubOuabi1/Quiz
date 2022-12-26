@@ -1,4 +1,4 @@
-.scrour, .question {
+.rules, .scrour, .question {
   color: #fff;
   border: 2px solid #069;
   border-radius: 10px;
@@ -36,6 +36,10 @@ body {
   border-radius: 10px;
 }
 
+.hiden {
+  display: none;
+}
+
 .answerContainer {
   display: grid;
   gap: 10px;
@@ -47,6 +51,18 @@ body {
   margin-top: 100px;
   text-align: center;
   color: #fff;
+}
+
+.rules {
+  text-align: start;
+}
+
+.startQuiz {
+  background-color: #7aa6c2;
+  width: 120px;
+  height: 40px;
+  border: 0 solid transparent;
+  border-radius: 10px;
 }
 
 .answerBefor {

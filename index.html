@@ -9,7 +9,21 @@
 </head>
 <body>
     <div class="container">
-        <div id="answerPar">
+
+        <div id="rules" class="rules">
+            <div  class="rules">
+                <div class="titles">QuizzYD Rules</div>
+                <p>1. You have 30 secondes in every question.</p>
+                <p>2. You can't back into the previous question if you click "Next".</p>
+                <p>3. You can't see your score until the end of the quizz.</p>
+                <p>4. You have 1 point for every correct question.</p>
+                <div  class="next_button">
+                    <button type="button" class="startQuiz" onclick="startQuiz()">Start Quizz</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="answerPar" class="hiden" >
             <h1>Choose the correct answer</h1>
             <div class="progress-bar">
                 <div class="progress-done">
@@ -28,7 +42,7 @@
         </div>
 
 
-        <div class="scrour" id="scrPar">
+        <div class="scrour hiden"  id="scrPar">
             <p>total of the correct answers is <span id="scr">12</span></p>
         </div>
     </div>

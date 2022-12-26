@@ -5,7 +5,12 @@ function changeProgress(maxValue,finalValue){
     progressDone.style.width=`${(maxValue*100)/finalValue}%`;
     progressDone.innerHTML=`${Number((maxValue*100)/finalValue).toFixed(2)}%`;
 }
- getData();
+function startQuiz(){
+    $("#rules").addClass("hiden");
+    $("#answerPar").removeClass("hiden");
+    getData();
+}
+//getData();
 
 function printQuestion(data, arrayNumberCounter) {
     $('#questionTitle').text(`${data[arrayNumber[arrayNumberCounter]].question}`)
@@ -14,7 +19,16 @@ function printQuestion(data, arrayNumberCounter) {
     $('#3').text(`${data[arrayNumber[arrayNumberCounter]].choice3}`);
     $('#4').text(`${data[arrayNumber[arrayNumberCounter]].choice4}`);
 }
-
+function rangeNumber(maxValue){
+    let number;
+    for (let i=0; i<maxValue;i++){
+        number = Math.floor(Math.random() * maxValue);
+        while (arrayNumber.includes(number)){
+            number = Math.floor(Math.random() * maxValue);
+        }
+        arrayNumber.push(number);
+    }
+}
 function getData(){
     $("#scrPar").css("display","none");
     $.ajax({
@@ -35,17 +49,14 @@ function getData(){
                         progressDone.style.marginLeft =`0px`;
                         if(counter<dataSize){
                             //arrayNumberCounter++;
-                            if(data[[arrayNumber[index]]].answer==ClickedButton[i].getAttribute("id")){
+                            if(data[arrayNumber[index]].answer==ClickedButton[i].getAttribute("id")){
                                 console.log("this is correct")
                                 CorrectAnswer++;
                                 ClickedButton[i].classList.add("answerCorrect");
 
                             }else {
                                 ClickedButton[i].classList.add("answerNotCorrect");
-
                             }
-
-
                             ClickedButton[i].setAttribute("disabled", value);
                             setTimeout(function () {
                                 ClickedButton[i].removeAttribute("disabled");
@@ -61,7 +72,7 @@ function getData(){
 
                         }else if(counter===dataSize){
                             changeProgress(counter,dataSize);
-                            if(data[[arrayNumber[index]]].answer==ClickedButton[i].getAttribute("id")){
+                            if(data[arrayNumber[index]].answer==ClickedButton[i].getAttribute("id")){
                                 console.log("this is correct")
                                 CorrectAnswer++;
                                 ClickedButton[i].classList.add("answerCorrect");
@@ -72,8 +83,8 @@ function getData(){
                             }
                             setTimeout(function (){
                                 $("#scr").html(`${CorrectAnswer}`);
-                                $("#scrPar").removeAttr("style");
-                                $("#answerPar").css("display","none");
+                                $("#scrPar").removeClass("hiden");
+                                $("#answerPar").addClass("hiden");
                             },500)
 
 
@@ -91,14 +102,4 @@ function getData(){
     })
 }
 
-function rangeNumber(maxValue){
-    let number;
-    for (let i=0; i<maxValue;i++){
-        number = Math.floor(Math.random() * maxValue);
-        while (arrayNumber.includes(number)){
-            number = Math.floor(Math.random() * maxValue);
-        }
-        arrayNumber.push(number);
-    }
 
-}
