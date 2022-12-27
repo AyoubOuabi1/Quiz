@@ -48,16 +48,30 @@ body {
 .progress-done{
   text-align: center;
   display: flex;
-  margin-left: 25px;
   justify-content: center;
   align-items: center;
   background-color:$answerBackColor;
   transition: 1s ease 0.3s;
   height:100%;
-  width:0%;
+  width:0;
   border-radius: 10px;
 }
-.hiden{
+
+.progress-Time{
+  width: 100%;
+  height: 1em;
+  background-color: $qeustionBackColor;
+  border-radius: 10px;
+  color: $textColor;
+  margin-bottom: 20px;
+}
+#Bar-Time {
+  width:100%;
+  height: 100%;
+  background-color:$answerBackColor;
+  border-radius: 10px;
+}
+.hidden{
   display: none;
 }
 
@@ -80,10 +94,13 @@ body {
 }
 .scrour{
   @extend %paraDesign;
+  font-size: 30px;
+
 }
 .rules{
   @extend %paraDesign;
   text-align: start;
+  font-size: 20px;
  }
 .startQuiz{
   background-color: $answerBackColor;

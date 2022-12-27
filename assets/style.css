@@ -26,17 +26,32 @@ body {
 .progress-done {
   text-align: center;
   display: flex;
-  margin-left: 25px;
   justify-content: center;
   align-items: center;
   background-color: #7aa6c2;
   transition: 1s ease 0.3s;
   height: 100%;
-  width: 0%;
+  width: 0;
   border-radius: 10px;
 }
 
-.hiden {
+.progress-Time {
+  width: 100%;
+  height: 1em;
+  background-color: #069;
+  border-radius: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+#Bar-Time {
+  width: 100%;
+  height: 100%;
+  background-color: #7aa6c2;
+  border-radius: 10px;
+}
+
+.hidden {
   display: none;
 }
 
@@ -53,8 +68,13 @@ body {
   color: #fff;
 }
 
+.scrour {
+  font-size: 30px;
+}
+
 .rules {
   text-align: start;
+  font-size: 20px;
 }
 
 .startQuiz {
